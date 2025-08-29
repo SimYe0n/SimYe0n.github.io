@@ -215,14 +215,14 @@ body.fade-in-background html::before {
 /* Estilos del contenedor principal del contenido */
 #stuff {
     max-width: 85%;
-    height: 600px; /* Altura fija para el contenedor principal */
+    height: 800px; /* Altura fija para el contenedor principal */
     background-color: #2E000099;
     padding: 10px;
     border-radius: 10px;
     margin-top: 20px; /* Margen superior e inferior consistentes */
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -20px; /* Margen superior e inferior consistentes */
+    margin-bottom: 20px; /* Margen superior e inferior consistentes */
     overflow-y: auto; /* Agrega scroll vertical si el contenido excede la altura */
     box-shadow: -1px -1px 20px 5px #4d4442 inset;
     border: 20px white solid;
@@ -1039,5 +1039,6 @@ section.visible {
     opacity: 1;
     pointer-events: auto;
 }
+
 
 /* --- FIN EFECTOS FADE-IN --- */
