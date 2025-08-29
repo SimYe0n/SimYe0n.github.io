@@ -215,7 +215,7 @@ body.fade-in-background html::before {
 /* Estilos del contenedor principal del contenido */
 #stuff {
     max-width: 85%;
-    height: 800px; /* Altura fija para el contenedor principal */
+    min-height: 800px !important;/* Altura fija para el contenedor principal */
     background-color: #2E000099;
     padding: 10px;
     border-radius: 10px;
@@ -1042,3 +1042,4 @@ section.visible {
 
 
 /* --- FIN EFECTOS FADE-IN --- */
+
