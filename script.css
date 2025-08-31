@@ -77,37 +77,37 @@ const playlist = [
 {
 title: 'Sonne',
 artist: 'Artista 1',
-src: 'https://files.catbox.moe/97tuot.mp3'
+src: 'https://github.com/SimYe0n/SimYe0n.github.io/blob/main/assets4/97tuot.mp3'
 },
 {
 title: 'Lacrimosa',
 artist: 'Artista 2',
-src: 'https://files.catbox.moe/2lt6q1.mp3'
+src: 'https://github.com/SimYe0n/SimYe0n.github.io/blob/main/assets4/2lt6q1.mp3'
 },
 {
 title: 'Vampire knight',
 artist: 'Artista 3',
-src: 'https://files.catbox.moe/y8h0ib.mp3'
+src: 'https://github.com/SimYe0n/SimYe0n.github.io/blob/main/assets4/y8h0ib.mp3'
 },
 {
 title: 'Succession',
 artist: 'Artista 4',
-src: 'https://files.catbox.moe/545q3b.mp3'
+src: 'https://github.com/SimYe0n/SimYe0n.github.io/blob/main/assets4/545q3b.mp3'
 },
 {
 title: 'Ofelia',
 artist: 'Artista 6',
-src: 'https://files.catbox.moe/5glv7m.mp3'
+src: 'https://github.com/SimYe0n/SimYe0n.github.io/blob/main/assets4/5glv7m.mp3'
 },
 {
 title: 'Cordelia',
 artist: 'Artista 7',
-src: 'https://files.catbox.moe/gw2skq.mp3'
+src: 'https://github.com/SimYe0n/SimYe0n.github.io/blob/main/assets4/gw2skq.mp3'
 },
 {
 title: 'Carmelia',
 artist: 'Artista 8',
-src: 'https://files.catbox.moe/knu90q.mp3'
+src: 'https://github.com/SimYe0n/SimYe0n.github.io/blob/main/assets4/knu90q.mp3'
 }
 ];
 
@@ -363,5 +363,4 @@ closeWelcomeModal(false);
 });
 }
 });
-// --- FIN cartel bienvenida ---
 // --- FIN cartel bienvenida ---
