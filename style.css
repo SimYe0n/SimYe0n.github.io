@@ -1,0 +1,1044 @@
+/* Estilos generales del cuerpo de la página */
+html, body {
+height: 100%; /* Asegura que html y body ocupen toda la altura */
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: sans-serif;
+background-color: #292323;
+background-image: url(https://files.catbox.moe/xku9u7.png);
+background-position: center center; /* Centra el fondo horizontal y verticalmente */
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed; /* Mantiene el fondo fijo al viewport */
+color: #D1CCC7;
+text-shadow: 1px 1px 3px #4d4442;
+cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:white;font-size:24px;'><text y='50%'>🦇</text></svg>") 16 0, auto;
+filter: hue-rotate(-9deg) grayscale(40%);
+}
+
+/* --- Cartel de bienvenida --- */
+.modal-overlay {
+box-shadow: 
+/* Sombra inferior */
+0px 15px 15px rgba(0, 0, 0, 0.2),
+0 -50px 30px -10px rgba(0, 0, 0, 0.5);
+position: fixed;
+inset: 0;
+background-color: rgba(0, 0, 0, 0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+opacity: 1;
+visibility: visible;
+}
+.modal-content {
+position: relative;
+max-width: 99%;
+width: 100%;
+border-radius: 0.75rem;
+transform: translateY(-8%);
+margin-top: 8vh;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.modal-image {
+filter: none;
+width: 100%;
+height: auto;
+border-radius: 0.75rem;
+}
+.modal-text-overlay {
+position: absolute;
+inset: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: white;
+padding: 0.75rem;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+transform: translateY(-8%);
+pointer-events: none;
+}
+.modal-text-overlay .text-main {
+font-size: 0.875rem;
+line-height: 1.1;
+margin-bottom: 0.5rem;
+}
+.modal-text-overlay .text-advice {
+font-size: 0.75rem;
+line-height: 1.1;
+margin-top: 0.25rem;
+margin-bottom: 0.25rem;
+}
+.modal-text-overlay .text-separator {
+font-size: 0.75rem;
+line-height: 1.1;
+margin-top: 0.5rem;
+margin-bottom: 0.5rem;
+}
+.button-container {
+position: absolute;
+bottom: 12.5rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 1rem;
+z-index: 60;
+pointer-events: auto;
+}
+.button-group {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.action-button {
+padding: 0.25rem 0.9rem;
+font-size: 0.75rem;
+font-weight: 600;
+color: white;
+background-color: rgba(0, 0, 0, 0.6);
+border-radius: 0.5rem;
+border: 1px solid rgba(255, 255, 255, 0.3);
+cursor: pointer;
+transition: background-color 0.2s ease, border-color 0.2s ease;
+position: relative;
+z-index: 1;
+white-space: nowrap;
+}
+.action-button:hover {
+background-color: rgba(0, 0, 0, 0.8);
+border-color: rgba(255, 255, 255, 0.6);
+}
+.button-icon {
+position: absolute;
+border-radius: 0.375rem;
+object-fit: cover;
+z-index: 2;
+top: 50%;
+transform: translateY(-50%);
+}
+.button-group:first-child .button-icon {
+width: 3rem;
+height: 3rem;
+left: -2rem;
+}
+.button-group:last-child .button-icon {
+width: 4rem;
+height: 4rem;
+right: -2rem;
+}
+@media (min-width: 640px) {
+.modal-content {
+max-width: 600px;
+transform: translateY(-12%);
+margin-top: 12vh;
+}
+.modal-text-overlay {
+padding: 1.5rem;
+transform: translateY(-13%);
+}
+.modal-text-overlay .text-main {
+font-size: 1rem;
+line-height: 1.2;
+}
+.modal-text-overlay .text-advice {
+font-size: 0.875rem;
+line-height: 1.2;
+}
+.modal-text-overlay .text-separator {
+font-size: 0.875rem;
+line-height: 1.2;
+}
+.button-container {
+bottom: 13.5rem;
+gap: 1.5rem;
+}
+.action-button {
+padding: 0.375rem 1.2rem;
+font-size: 0.875rem;
+}
+.button-group:first-child .button-icon {
+width: 4rem;
+height: 4rem;
+left: -2.5rem;
+}
+.button-group:last-child .button-icon {
+width: 5rem;
+height: 5rem;
+right: -2.5rem;
+}
+}
+/* --- FIN cartel de bienvenida --- */
+
+/* Efecto de líneas de escaneo en el fondo */
+html::before {
+content: "";
+display: block;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+z-index: 2;
+background-size: 100% 2px, 3px 100%;
+pointer-events: none;
+opacity: 0;
+transition: opacity 1.5s ease;
+}
+
+/* Animación de entrada para el fondo */
+body.fade-in-background html::before {
+opacity: 1;
+}
+
+/* Estilos del contenedor principal del contenido */
+#stuff {
+max-width: 85%;
+    min-height: 800px !important;/* Altura fija para el contenedor principal */
+    height: 800px !important;/* Altura fija para el contenedor principal */
+background-color: #2E000099;
+padding: 10px;
+border-radius: 10px;
+margin-top: 20px; /* Margen superior e inferior consistentes */
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px; /* Margen superior e inferior consistentes */
+overflow-y: auto; /* Agrega scroll vertical si el contenido excede la altura */
+box-shadow: -1px -1px 20px 5px #4d4442 inset;
+border: 20px white solid;
+border-image: url(https://i.imgur.com/cIk3Llf.png) 30% round;
+border-image-outset: 5px 5px;
+opacity: 0;
+transition: opacity 1s ease 0.2s;
+display: flex; /* Añadido para controlar el layout interno */
+flex-direction: column; /* Contenido apilado verticalmente por defecto */
+}
+
+/* Animación de entrada para el contenido principal */
+body.fade-in-content #stuff {
+opacity: 1;
+}
+
+/* Estilos del encabezado */
+#header {
+width: 100%;
+height: auto;
+background-image: url(https://files.catbox.moe/l84c86.png); /* Imagen de fondo para el encabezado */
+background-size: contain; /* Cambiado a 'contain' para hacer la imagen más pequeña y visible */
+background-repeat: no-repeat; /* Evita la repetición de la imagen */
+background-position: center; /* Centra la imagen de fondo */
+filter: sepia(100) hue-rotate(-30deg) grayscale(44%); /* Aplica el filtro a todo el encabezado */
+margin-bottom: -15px; /* Eliminado el margen inferior para anular la distancia */
+min-height: 60px; /* Altura mínima para mostrar la imagen correctamente */
+padding-top: 10px; /* Añadido padding para dar espacio a la imagen */
+padding-bottom: 0px; /* Añadido padding para dar espacio a la imagen */
+}
+
+/* Estilos para el elemento #treble (actualmente oculto) */
+#treble {
+margin-top: 160px;
+margin-left: -30px;
+transform: rotate(15deg);
+display: none;
+}
+
+/* Estilos generales para imágenes */
+img {
+filter: sepia(1) hue-rotate(-20deg) grayscale(50%);
+max-width: 100%;
+height: auto;
+}
+
+/* ESTILO ACTUALIZADO: Elimina TODOS los filtros para la imagen del muchacho */
+#imagen-muchacho {
+filter: none; /* Elimina todos los filtros para mostrar los colores originales */
+}
+
+/* Estilos para el tipo de caja 1 (borde punteado) */
+.box1 {
+border: 3px dashed #3b3231;
+border-radius: 10px;
+margin-top: 10px;
+padding: 10px; /* Mantener este padding para el espacio interno */
+box-sizing: border-box;
+width: 100%;
+}
+
+/* Estilos para el tipo de caja 2 (borde sólido) */
+.box2 {
+border: 2px solid #3b3231;
+border-radius: 10px;
+margin-top: 10px;
+padding: 10px; /* Mantener este padding para el espacio interno */
+box-sizing: border-box;
+width: 100%;
+display: flex; /* Añadido para usar flexbox */
+flex-direction: column; /* Para apilar los elementos verticalmente */
+justify-content: flex-start; /* Modificado para disminuir la distancia */
+gap: 10px; /* Aumentado el gap para separar ligeramente el texto y el chat */
+}
+
+/* Estilos para iframes (como el chat y videos) */
+iframe {
+filter: sepia(100) hue-rotate(-30deg) grayscale(70%) brightness(.9) contrast(1.1);
+width: 100%;
+height: auto;
+min-height: 150px;
+}
+
+/* Estilos para la barra de desplazamiento (Webkit) */
+div::-webkit-scrollbar {
+width: 10px;
+filter: sepia(1) hue-rotate(-20deg) grayscale(44%);
+}
+
+div::-webkit-scrollbar-track {
+background: transparent;
+width: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+background-image: url("https://i.pinimg.com/originals/bd/11/70/bd11702a9eacc5fe36708f830a2fce39.png");
+background-repeat: no-repeat;
+background-size: 100%;
+}
+
+/* Estilos de la barra de navegación */
+#navbar {
+height: auto;
+background-color: #494244;
+width: 100%;
+border-style: solid;
+border-width: thin;
+border-color: #362b2b;
+box-shadow: #141010 0px 30px 60px -12px inset,
+#362b2b 0px 18px 36px -18px inset;
+position: static; /* Cambiado de 'static center' a 'static' */
+top: auto;
+left: auto;
+z-index: 100;
+margin-top: 0;
+}
+
+#navbar ul {
+display: flex;
+flex-direction: row;
+padding: 0;
+margin: 0;
+list-style-type: none;
+justify-content: center;
+align-items: center;
+text-align: left;
+flex-wrap: wrap;
+}
+
+#navbar li {
+padding: 2px 5px;
+border-bottom: none;
+width: auto;
+}
+
+#navbar li:last-child {
+border-bottom: none;
+}
+
+#navbar li a {
+color: #949192;
+font-size: 0.7em;
+font-weight: bold;
+text-decoration: none;
+}
+
+#navbar li a:hover {
+color: #ffffff;
+text-decoration: wavy underline;
+}
+
+/* Estilos de texto */
+strong {
+font-style: italic;
+}
+
+h1, h2 {
+color: #F6F6EE
+}
+
+h3 {
+color: #8D8181;
+}
+
+p {
+color: #8D8181;
+}
+
+th {
+color: #665d5d;
+}
+
+/* Media queries para diseño responsivo */
+.side-by-side-container {
+display: flex;
+flex-direction: column; /* Siempre apila los elementos verticalmente */
+width: 100%;
+gap: 10px; /* Espacio entre los elementos */
+margin-top: 10px; /* Margen superior reducido para subir el chat */
+margin-bottom: 20px;
+}
+.side-by-side-container > .box2 {
+width: 100%; /* El chat ocupa el 100% del ancho */
+height: 200px; /* Altura fija para el recuadro del chat (disminuida) */
+}
+.side-by-side-container > .box1 {
+width: 100%; /* Cada elemento ocupa el 100% del ancho */
+min-width: unset; /* Eliminar min-width si no es necesario */
+max-height: 180px; /* Altura máxima para el recuadro del texto 9 */
+overflow-y: auto; /* Añade scroll vertical si el contenido excede la altura */
+}
+
+/* Estilos para el contenedor de la imagen en la sección de música */
+.music-image-box {
+position: relative; /* CRÍTICO: Establece este div como el contenedor de posicionamiento para la mariposa */
+}
+
+/* ESTILOS PARA LA SECCIÓN DE MUSIC ABAJO */
+.music-bottom-grid {
+display: flex;
+flex-direction: column; /* Por defecto, apilado para pantallas pequeñas */
+gap: 15px; /* Espacio entre los dos recuadros */
+width: 100%;
+margin-top: 40px; /* Ajustado el margen superior */
+/* position: relative; ya no es necesario aquí para la mariposa, se movió a .music-image-box */
+}
+
+.music-bottom-grid .music-box-item {
+width: 100%;
+height: auto;
+}
+
+.music-bottom-grid .box1 img {
+max-height: 300px; /* Establecer una altura máxima para la imagen dentro de box1 */
+object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+}
+
+.music-bottom-grid .box2 iframe {
+min-height: 250px; /* Aumenta la altura mínima para el iframe de YouTube */
+height: auto; /* Asegura que la altura se ajuste al contenido si es más grande */
+}
+
+.music-bottom-grid .box1 h3,
+.music-bottom-grid .box2 h3 {
+margin-top: 0; /* Ajusta el espaciado de los encabezados */
+}
+
+/* NUEVOS ESTILOS PARA LA ENVOLTURA DEL REPRODUCTOR MP3 */
+.player-section-wrapper {
+margin-top: 60px; /* Ajustado para subir el reproductor en escritorio (de 80px a 60px) */
+margin-left: auto; /* Centra horizontalmente */
+margin-right: auto; /* Centra horizontalmente */
+width: 100%; /* Ocupa todo el ancho disponible */
+max-width: 300px; /* Limita el ancho como el reproductor original */
+padding: 10px; /* Añade padding interno como box1 */
+transform: translateX(-15px); /* Mueve el reproductor 10px más a la izquierda */
+}
+
+/* ESTILOS PARA LA MARIPOSA */
+.butterfly-image {
+position: absolute;
+bottom: -135px; /* Mantiene la posición bajada */
+left: 50%;
+transform: translateX(-50%);
+width: 65px; /* Mantiene el tamaño más pequeño */
+height: auto;
+filter: none;
+z-index: 1;
+animation: floatAnimation 3s ease-in-out infinite; /* Añadida la animación */
+}
+
+/* Animación de la mariposa */
+@keyframes floatAnimation {
+0% { transform: translate(-50%, 0px); }
+50% { transform: translate(-50%, -5px); } /* Sube 5px */
+100% { transform: translate(-50%, 0px); }
+}
+
+/* NUEVOS ESTILOS PARA LA IMAGEN GRANDE EN SECCIÓN MUSIC */
+.music-section-large-image-container {
+width: 100%;
+display: flex;
+justify-content: center; /* Centra la imagen */
+margin-top: 20px; /* Espacio superior */
+margin-bottom: 20px; /* Espacio inferior */
+}
+
+.music-section-large-image {
+width: 100%; /* Ocupa todo el ancho disponible */
+max-width: 600px; /* Limita el ancho máximo para que no sea demasiado grande */
+height: auto; /* Mantiene la proporción */
+filter: none; /* Asegura que no tenga filtros */
+box-shadow: none; /* Asegura que no tenga sombreado */
+border-radius: 10px; /* Bordes redondeados para que se vea bien */
+}
+
+/* Estilos para la imagen en la sección de historia */
+.history-image {
+float: left;
+width: 45%; /* Ancho relativo a su contenedor (box1) */
+max-width: 300px; /* Límite para que no sea demasiado grande en pantallas amplias */
+margin-right: 10px; /* Espacio entre la imagen y el texto a su derecha */
+margin-bottom: 5px; /* Pequeño margen inferior si el texto es corto y termina antes que la imagen */
+border-radius: 10px; /* Bordes redondeados como la imagen de Home */
+filter: none; /* Asegura que no tenga filtros por defecto */
+}
+
+@media (min-width: 768px) {
+#navbar ul {
+flex-direction: row;
+justify-content: space-evenly;
+text-align: left;
+}
+#navbar li {
+border-bottom: none;
+padding-top: 10px;
+width: auto;
+}
+
+.music-bottom-grid {
+flex-direction: row; /* Muestra uno al lado del otro en pantallas más grandes */
+justify-content: space-between; /* Distribuye el espacio entre ellos */
+align-items: flex-start; /* Alinea los elementos en la parte superior */
+}
+
+.music-bottom-grid .music-box-item {
+height: auto;
+overflow-y: visible;
+}
+
+/* Estilos específicos para el recuadro de la imagen y el video */
+.music-bottom-grid .music-image-box {
+width: 250px; /* Ancho fijo para el recuadro de la imagen (ajusta si es necesario) */
+flex-shrink: 0; /* Evita que este recuadro se encoja */
+}
+
+.music-bottom-grid .music-box-item:not(.music-image-box) {
+flex-grow: 1; /* Permite que el recuadro del video crezca para ocupar el espacio restante */
+}
+/* AJUSTE DE LA MARIPOSA PARA ESCRITORIO (AHORA DENTRO DE .music-image-box) */
+.butterfly-image {
+bottom: -135px; /* Mantiene la posición bajada */
+left: 50%;
+transform: translateX(-50%);
+width: 65px; /* Mantiene el tamaño más pequeño */
+animation: floatAnimation 3s ease-in-out infinite; /* Añadida la animación */
+}
+}
+
+@media (max-width: 767px) {
+#stuff {
+margin-top: 20px; /* Ajustado para el formato móvil */
+margin-bottom: 20px; /* Ajustado para el formato móvil */
+}
+body {
+background-size: cover;
+background-position: center top;
+}
+#stuff {
+width: 95%;
+margin-left: auto;
+margin-right: auto;
+}
+#navbar ul {
+display: flex;
+flex-direction: row;
+justify-content: flex-start; /* Alinea los botones a la izquierda */
+align-items: center;
+flex-wrap: wrap;
+text-align: left;
+}
+#navbar li {
+width: auto;
+text-align: left;
+padding: 5px;
+margin-right: -15px; /* Volvemos a un margen positivo para separarlos un poco */
+margin-bottom: -5px;
+}
+#navbar li a {
+font-size: 0.6em;
+display: block;
+text-align: left; /* El texto dentro de cada botón sigue centrado */
+padding: 5px 10px;
+letter-spacing: 1px; /* Mantenemos las letras juntas */
+}
+/* AJUSTES ESPECÍFICOS PARA MÓVILES EN LA SECCIÓN MUSIC INFERIOR */
+.music-bottom-grid {
+flex-direction: row; /* ¡Ahora sí, en horizontal para móvil! */
+flex-wrap: wrap; /* Permite que los elementos se envuelvan si el espacio es muy limitado */
+justify-content: center; /* Centra los elementos si no ocupan todo el ancho */
+align-items: flex-start; /* Alinea los elementos en la parte superior */
+margin-top: 40px; /* Ajuste el margen superior para móviles también */
+}
+.music-bottom-grid .music-box-item {
+width: calc(50% - 7.5px); /* Cada uno ocupa casi la mitad del ancho, dejando espacio para el gap */
+box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho */
+padding: 8px; /* Reduce el padding de los recuadros en móviles */
+flex-shrink: 1; /* Permite que se encojan si es necesario */
+}
+.music-bottom-grid .box2 iframe {
+min-height: 160px; /* Reduce la altura mínima del iframe de YouTube en móviles */
+}
+.music-bottom-grid .box1 img {
+max-height: 180px; /* Ajusta la altura máxima de la imagen en móviles */
+width: 100%; /* Asegura que la imagen ocupe todo el ancho de su contenedor */
+}
+/* Ajuste del reproductor de música para centrarlo en móvil */
+.player-container {
+margin: auto; /* Ahora el margen auto centrará el reproductor dentro de su nueva envoltura */
+}
+.player-section-wrapper {
+margin-top: 20px; /* Ajustado para subir el reproductor en móviles (de 40px a 20px) */
+transform: translateX(-15px); /* Mueve el reproductor 10px más a la izquierda */
+}
+/* AJUSTE DE LA MARIPOSA PARA MÓVIL (NOW INSIDE .music-image-box) */
+.butterfly-image {
+bottom: -135px; /* Mantiene la posición bajada */
+left: 50%;
+transform: translateX(-50%);
+width: 65px; /* Mantiene el tamaño más pequeño */
+animation: floatAnimation 3s ease-in-out infinite; /* Añadida la animación */
+}
+}
+
+/* Estilos para los botones sociales */
+.social-buttons {
+display: flex;
+flex-direction: row; /* Asegura la disposición horizontal */
+justify-content: center; /* Centra los botones horizontalmente */
+align-items: center; /* Centra verticalmente en la línea (opcional) */
+margin-top: 0px;
+gap: 10px; /* Espacio entre botones, ajustado de 50% a 10px */
+white-space: nowrap; /* Evita el wrapping de los botones */
+overflow-x: auto; /* Añade scroll horizontal si los botones no caben */
+/* Posicionamiento absoluto dentro de .box2 */
+position: absolute;
+bottom: 5px; /* Ajusta según sea necesario para la posición vertical */
+left: 5px; /* Ajusta según sea necesario para la posición horizontal */
+z-index: 3; /* Asegura que estén por encima del contenido del box2 */
+}
+
+.social-button {
+display: inline-flex; /* Para que se comporten como bloques en línea para la disposición horizontal */
+align-items: center;
+justify-content: center;
+padding: 0;
+border: none;
+border-radius: 5px;
+color: white;
+text-decoration: none;
+cursor: pointer;
+width: 24px; /* Ancho fijo para el contenedor del botón */
+height: 24px; /* Alto fijo para el contenedor del botón */
+overflow: visible;
+background-color: transparent;
+margin: 0;
+margin-top: 0px; /* Vuelve a 0 para que no se suba/baje por sí mismo */
+}
+
+/* La animación de escala ahora se aplica directamente al ícono o imagen dentro del botón */
+.social-button:hover {
+z-index: 1;
+}
+
+.social-button i, .social-button img {
+transition: transform 0.2s ease-in-out; /* Transición para el escalado del ícono/imagen */
+}
+
+.social-button:hover i, .social-button:hover img {
+transform: scale(1.2); /* Escala uniforme para todos los íconos/imágenes al pasar el mouse */
+}
+
+/* Ajustes específicos para el tamaño inicial de los íconos/imágenes */
+.social-button i {
+font-size: 1em; /* Tamaño inicial para los íconos de Font Awesome */
+}
+
+.vk img, .tellonym img, .mewe img {
+width: 16px; /* Tamaño uniforme para las imágenes */
+height: 16px; /* Tamaño uniforme para las imágenes */
+filter: brightness(0) invert(1);
+}
+
+/* Clase para ocultar visualmente el texto (para lectores de pantalla) */
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+border: 0;
+}
+
+/* MP3 Player specific styles */
+.player-container {
+width: 100%;
+max-width: 280px; /* Even smaller max-width */
+background-color: #282828; /* Dark player background */
+border-radius: 10px; /* Slightly smaller border-radius */
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+padding: 8px 12px; /* Reduced internal padding */
+display: flex;
+flex-direction: column;
+gap: 6px; /* Reduced gap between elements */
+position: relative; /* For song list modal positioning and GIF */
+}
+
+/* Nuevo contenedor para la fila principal (imagen S1, texto y controles) */
+.main-content-row {
+display: flex;
+align-items: center; /* Centra verticalmente la imagen S1 con el bloque de texto/controles */
+gap: 8px; /* Espacio entre la imagen S1 y el contenido de la derecha */
+margin-bottom: 2px;
+}
+
+/* Contenedor para el texto y los controles (columna a la derecha de S1) */
+.right-side-content {
+display: flex;
+flex-direction: column; /* Apila el texto y los controles */
+flex-grow: 1; /* Permite que este contenedor ocupe el espacio restante */
+justify-content: center; /* Centra verticalmente el contenido dentro de esta columna */
+}
+
+/* Style for the video in S1 area */
+.album-art-video {
+width: 65px;
+height: 65px;
+border-radius: 5px;
+object-fit: cover; /* Ensures the video covers the area without distortion */
+flex-shrink: 0; /* Prevent shrinking */
+/* Adjusted filter for less black effect */
+filter: brightness(0.8) grayscale(60%); /* Further reduced black filter */
+}
+
+/* Title and artist container */
+.text-info {
+display: flex;
+flex-direction: column;
+overflow: hidden; /* Hide overflowing text */
+white-space: nowrap; /* Prevent line breaks */
+margin-bottom: 5px; /* Espacio entre el texto y los botones */
+}
+
+/* Song title */
+.song-title {
+font-size: 0.7em;
+font-weight: bold;
+color: #ffffff;
+text-overflow: ellipsis;
+overflow: hidden;
+}
+
+/* Artist name */
+.artist-name {
+font-size: 0.55em;
+color: #b3b3b3;
+text-overflow: ellipsis;
+overflow: hidden;
+}
+
+/* Player controls (buttons) */
+.controls-section {
+display: flex;
+justify-content: flex-start; /* Alinea los botones al inicio (izquierda) de su contenedor */
+align-items: center;
+gap: 6px; /* Espacio entre todos los botones */
+}
+
+.control-button {
+background: none;
+border: none;
+color: #b3b3b3; /* Light gray color for icons */
+font-size: 0.9em; /* AUMENTADO: Tamaño de los iconos */
+cursor: pointer;
+padding: 2px; /* Standard padding for all buttons */
+border-radius: 50%; /* Circular buttons */
+transition: color 0.2s ease, transform 0.2s ease;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.control-button:hover {
+color: #ffffff; /* White on hover */
+transform: scale(1.1);
+}
+
+/* Play/pause button and circular bar container */
+.play-pause-wrapper {
+position: relative;
+width: 32px; /* AUMENTADO: Ajustado para el nuevo tamaño de icono */
+height: 32px; /* AUMENTADO: Ajustado para el nuevo tamaño de icono */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Play/pause button itself */
+.control-button.play-pause {
+font-size: 0.9em; /* AUMENTADO: MISMO TAMAÑO que otros botones de control */
+color: #ffffff; /* White */
+transition: color 0.2s ease, transform 0.2s ease;
+position: relative; /* To be above SVG */
+z-index: 2; /* Ensure button is visible */
+background: none; /* Ensure no background to see the circle */
+border: none;
+padding: 0; /* Remove padding for better size control */
+width: 100%; /* Occupy full wrapper */
+height: 100%; /* Occupy full wrapper */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.control-button.play-pause:hover {
+color: #4A0F0D; /* Dark brown on hover */
+}
+
+/* Styles for the circular progress SVG bar */
+.circular-progress {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+transform: rotate(-90deg); /* Start progress from top */
+z-index: 1; /* Behind play/pause button */
+}
+
+.progress-background {
+fill: none;
+stroke: #404040; /* Background color of the circular bar */
+stroke-width: 1.5; /* Thinner bar */
+}
+
+.progress-fill {
+fill: none;
+stroke: #4A0F0D; /* Progress color (Dark brown) */
+stroke-width: 1.5; /* Thinner bar */
+stroke-linecap: round; /* Rounded ends for progress bar */
+transition: stroke-dashoffset 0.1s linear; /* Smooth progress transition */
+}
+
+/* Volume group for positioning slider */
+.volume-group {
+position: relative; /* Needed for absolute positioning of slider */
+display: flex; /* To contain the button */
+justify-content: center;
+align-items: center;
+}
+
+/* Volume control button */
+.volume-button {
+/* Inherits most styles from .control-button */
+}
+
+/* Volume slider (appears above the volume button) */
+.volume-slider-container {
+position: absolute;
+bottom: calc(100% + 6px); /* Positioned above the volume button */
+left: 50%; /* Center horizontally relative to its parent (.volume-group) */
+transform: translateX(-50%);
+background-color: #383838; /* Slider background */
+padding: 6px 3px; /* Reduced padding */
+border-radius: 5px; /* Smaller border-radius */
+box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3); /* Smaller shadow */
+display: flex;
+justify-content: center;
+align-items: center;
+height: 70px; /* Smaller visual height of slider container */
+width: 30px; /* Smaller visual width of slider container */
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+z-index: 10; /* Ensure it's above other elements */
+}
+
+.volume-slider-container.visible {
+opacity: 1;
+visibility: visible;
+}
+
+input[type="range"] {
+-webkit-appearance: none; /* Remove default browser styles */
+width: 60px; /* Shorter slider length */
+height: 4px; /* Thinner slider */
+background: #606060; /* Track color */
+outline: none;
+border-radius: 2px;
+cursor: pointer;
+transform: rotate(-90deg); /* Rotate slider vertically */
+transform-origin: center; /* Ensure rotation from center */
+margin: 0;
+position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 12px; /* Smaller thumb size */
+height: 12px; /* Smaller thumb size */
+background: #4A0F0D; /* Dark brown */
+border-radius: 50%; /* Circular shape */
+cursor: grab;
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); /* Smaller shadow */
+}
+
+input[type="range"]::-moz-range-thumb {
+width: 12px;
+height: 12px;
+background: #4A0F0D; /* Dark brown */
+border-radius: 50%;
+cursor: grab;
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-ms-thumb {
+width: 12px;
+height: 12px;
+background: #4A0F0D; /* Dark brown */
+border-radius: 50%;
+cursor: grab;
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Slider track styles (Firefox) */
+input[type="range"]::-moz-range-track {
+background: #606060;
+border-radius: 2px;
+height: 4px;
+}
+
+/* Slider track styles (IE) */
+input[type="range"]::-ms-track {
+background: #606060;
+border-radius: 2px;
+height: 4px;
+}
+
+/* Modal de la lista de canciones */
+.song-list-modal {
+position: absolute;
+top: calc(100% + 10px); /* Posiciona debajo del player-container */
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 20px); /* Ligeramente menos que el ancho total del player-container */
+max-width: 260px; /* Ajusta según el max-width del player-container */
+background-color: #383838;
+border-radius: 8px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+padding: 10px;
+max-height: 150px; /* Altura máxima para hacerla desplazable */
+overflow-y: auto;
+z-index: 100;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+box-sizing: border-box; /* Incluye el padding en el ancho */
+}
+
+.song-list-modal.visible {
+opacity: 1;
+visibility: visible;
+}
+
+.song-list-modal ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.song-list-modal li {
+padding: 8px 5px;
+cursor: pointer;
+color: #e0e0e0;
+font-size: 0.8em; /* Tamaño de texto de la canción en la lista */
+border-radius: 4px;
+transition: background-color 0.2s ease;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.song-list-modal li:hover {
+background-color: #4a4a4a;
+}
+
+.song-list-modal li.active {
+background-color: #4A0F0D; /* Highlights active song with dark brown */
+color: #ffffff;
+font-weight: bold;
+}
+
+/* Style for the vinyl GIF */
+.vinyl-gif {
+position: absolute;
+top: 50%; /* Center vertically */
+right: -25px; /* Adjusted position to account for increased size */
+transform: translateY(-50%); /* Adjust for vertical centering */
+width: 100px; /* Increased size of the GIF */
+height: 100px; /* Increased size of the GIF */
+border-radius: 50%; /* Make it round */
+object-fit: cover; /* Ensure the GIF covers the area */
+z-index: 50; /* Ensure it's above other elements if it overlaps */
+filter: brightness(0.7) grayscale(70%); /* Reduced black filter for the GIF */
+}
+
+/* --- EFECTOS FADE-IN DEL FONDO, CONTENEDOR Y SECCIONES --- */
+
+body::before {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background: #000;
+z-index: 20;
+opacity: 1;
+pointer-events: none;
+transition: opacity 1.8s ease;
+}
+body.fade-in-background::before {
+opacity: 0;
+}
+
+section {
+opacity: 0;
+transition: opacity 0.8s ease;
+pointer-events: none;
+}
+section.visible {
+opacity: 1;
+pointer-events: auto;
+}
+
+/* --- FIN EFECTOS FADE-IN --- */
