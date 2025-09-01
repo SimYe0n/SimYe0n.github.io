@@ -5,7 +5,7 @@ document.body.classList.add('fade-in-background');
 // Espera a que termine la transición del fondo (1.5s) y luego inicia la transición del contenido
 setTimeout(function() {
 document.body.classList.add('fade-in-content');
-}, 200);
+}, 40);
 
 // Agrega event listeners a los enlaces de la barra de navegación
 document.querySelectorAll('#navbar a').forEach(anchor => {
